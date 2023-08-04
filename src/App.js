@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { createContext, useEffect } from "react";
+import Navbar from "./Layout/Header/Navbar";
+
+export const context = createContext();
 
 function App() {
+  useEffect(() => {
+    if (localStorage.getItem("theme") === "theme-dark") {
+      setTheme("theme-dark");
+    } else {
+      setTheme("theme-light");
+    }
+  }, []);
+
+  function setTheme(themeName) {
+    localStorage.setItem("theme", themeName);
+    document.documentElement.className = themeName;
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <context.Provider value={{ setTheme }}>
+        <Navbar />
+      </context.Provider>
     </div>
   );
 }
