@@ -3,31 +3,31 @@ import Moon from "../../SvgIcons/Moon";
 import Sun from "../../SvgIcons/Sun";
 import { context } from "../../App";
 
-
 function Theme() {
-  const [darkMode, setDarkMode] = useState(true);
-  const {setTheme} = useContext(context)
-  const background = darkMode ? (
-    <div
-      className="nav_bar-sun"
-      onClick={() => {
-        setTheme("theme-dark");
-        setDarkMode(!darkMode);
-      }}
-    >
-      <Sun />
-    </div>
-  ) :(
-    <div
-      className="nav_bar-moon"
-      onClick={() => {
-        setTheme("theme-light")
-        setDarkMode(!darkMode);
-      }}
-    >
-      <Moon />
-    </div>
-  );
+  const { setTheme} = useContext(context);
+  const [dark, setDark] = useState(false);
+
+  const handledark = () => {
+    setDark(!dark);
+    setTheme("theme-light");
+  };
+
+  const handlelight = () => {
+    setDark(!dark);
+    setTheme("theme-dark");
+  };
+
+  const background =
+    localStorage.getItem("theme") === "theme-dark" ? (
+      <div className="nav_bar-moon" onClick={handledark}>
+        <Moon />
+      </div>
+    ) : (
+      <div className="nav_bar-sun" onClick={handlelight}>
+        <Sun />
+      </div>
+    );
+
   return <div className="nav_bar-theme">{background}</div>;
 }
 
