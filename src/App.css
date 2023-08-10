@@ -56,6 +56,7 @@ body {
   --h6: var(--base-size);
   --font-family: "Wotfard", "Poppins", -apple-system, sans-serif;
   --height: 100vh;
+  --font-color-static: #7e8c9a
 
 
 }
@@ -71,6 +72,8 @@ body {
   width: 100%;
   position: absolute;
   z-index: 100;
+  position:fixed ;
+  background-color: var(--color-primary);
 }
 
 
@@ -407,7 +410,7 @@ body {
 
 .feature_pro-heading {
   color: var(--color-secondary);
-  font-weight: 200;
+  font-weight: 600;
   font-size: 3rem;
   margin: 0;
   margin-bottom: .75rem;
@@ -463,4 +466,96 @@ body {
 
 svg{
   fill: var(--color-secondary);
+}
+
+
+/* Foooter */
+
+.footer_container{
+  width: 100%;
+  background-color: var(--hover-color);
+  padding: 1rem;
+  padding-bottom: 3rem;
+  display: flex;
+  justify-content:space-around;
+  font-family: var(--font-family);
+}
+
+.footer_coffee-image{
+ width: auto;
+ height: 2rem;
+ padding-left: .5rem;
+ 
+}
+
+
+.footer_container-left{
+display: flex;
+flex-direction: column;
+}
+
+.footer_container-right{
+display: flex;
+flex-direction: column;
+}
+
+.footer-container-left-heading-container{
+ display: flex;
+ align-items: center;
+ justify-content: flex-start;
+ font-size: 1.3rem;
+ line-height: 2rem;
+ 
+}
+
+.footer-container-heading{
+  font-weight: 400;
+  margin: 0;
+  color: var(--font-color-static);
+}
+
+.footer_inquiries{
+  color: var(--font-color-static);
+  font-weight: 200;
+  font-size: 1rem;
+  margin-top: 2rem;
+  margin-bottom: .5rem;
+  
+}
+
+.footer_mail{
+  color: var(--font-color-static);
+  font-weight: 200;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.footer_develop{
+  color: var(--font-color-static);
+  font-weight: 200;
+  font-size: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 0;
+}
+
+.footer_container-right-icons{
+display: flex;
+align-items: center;
+}
+
+.footer_container-right-link{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: .5rem;
+  margin-bottom: 2rem;
+ 
+  
+}
+
+.footer_links{
+  text-decoration: none;
+  color: var(--font-color-static);
+  font-weight:lighter;
 }

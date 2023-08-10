@@ -2,31 +2,35 @@ import React, { useContext, useEffect, useState } from "react";
 import Theme from "./Theme";
 import Hamburger from "hamburger-react";
 import { context } from "../../App";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const { isMobile } = useContext(context);
 
   const [menu, setMenu] = useState(false);
 
-
-  useEffect(()=>{
-    if (isMobile){
-      setMenu(false)
+  useEffect(() => {
+    if (isMobile) {
+      setMenu(false);
     }
-  },[isMobile])
+  }, [isMobile]);
 
   const anchor = ["About", "Project", "Graphics", "Photos"];
   const renderAnchor = anchor.map((anchor, index) => (
-    <a key={index} href={`/${anchor}`} className="nav_bar-link">
+    <Link key={index} to={`/${anchor}`} className="nav_bar-link">
       {anchor}
-    </a>
+    </Link>
   ));
 
   const render = isMobile ? (
     <div className="nav_bar">
-      <a href="/" className="nav_bar-heading">
-        <h3>Rajan Pandey</h3>
-      </a>
+      <h3>
+        {" "}
+        <Link to="/" className="nav_bar-heading">
+          Rajan Pandey
+        </Link>
+      </h3>
+
       <div onClick={() => setMenu(!menu)}>
         {" "}
         <Hamburger />
@@ -46,7 +50,7 @@ function Navbar() {
   return (
     <>
       {render}
-      { menu  && (
+      {menu && (
         <div className="nav_bar-mobile-layout">
           <div className="nav_bar-mobile">
             <div className="nav_bar-links">{renderAnchor}</div>
