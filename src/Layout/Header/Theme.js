@@ -1,11 +1,11 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import Moon from "../../SvgIcons/Moon";
 import Sun from "../../SvgIcons/Sun";
 import { context } from "../../App";
 
 function Theme() {
-  const { setTheme} = useContext(context);
-  const [dark, setDark] = useState(false);
+  const { setTheme,dark,setDark} = useContext(context);
+  
 
   const handledark = () => {
     setDark(!dark);

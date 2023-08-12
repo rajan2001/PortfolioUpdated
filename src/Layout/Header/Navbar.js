@@ -1,13 +1,13 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import Theme from "./Theme";
 import Hamburger from "hamburger-react";
 import { context } from "../../App";
 import { Link } from "react-router-dom";
 
 function Navbar() {
-  const { isMobile } = useContext(context);
+  const { isMobile,menu,setMenu } = useContext(context);
 
-  const [menu, setMenu] = useState(false);
+  
 
   useEffect(() => {
     if (isMobile) {

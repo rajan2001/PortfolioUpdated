@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import { Player } from "@lottiefiles/react-lottie-player";
+import { context } from "../../App";
 
 function Body() {
   const [button, setbutton] = useState(0);
   const sideButton = ["GitHub", "Companies"];
+  const { isMobile} = useContext(context);
 
   const sideButtonRender = sideButton.map((render, index) => (
     <button
@@ -70,7 +72,7 @@ function Body() {
               autoplay
               loop
               src={process.env.PUBLIC_URL + "src/animation.json"}
-              style={{ height: "400px", width: "400px" }}
+              style={isMobile ? { height: "auto", width: "60%" }:{ height: "auto", width: "45%" }}
             ></Player>
           </div>
           <div className="body_main-heading">
