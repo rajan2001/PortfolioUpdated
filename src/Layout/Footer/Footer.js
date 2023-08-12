@@ -6,15 +6,8 @@ function Footer() {
       <div className="footer_container-left">
         <div className="footer-container-left-heading-container">
           <h3 className="footer-container-heading">
-            Let's connect and grab a coffee
+            Let's connect and grab a coffee ☕
           </h3>
-          <span>
-            <img
-              src={process.env.PUBLIC_URL + "src/coffee.png"}
-              alt="coffeePhoto"
-              className="footer_coffee-image"
-            />
-          </span>
         </div>
 
         <p className="footer_inquiries">
@@ -41,8 +34,12 @@ function Footer() {
           <a href="/" className="footer_links">
             Projects
           </a>
-          <a href="https://medium.com/" rel="noreferrer"
-            target="_blank" className="footer_links">
+          <a
+            href="https://medium.com/"
+            rel="noreferrer"
+            target="_blank"
+            className="footer_links"
+          >
             Blog
           </a>
         </div>
